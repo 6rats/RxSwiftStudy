@@ -1,0 +1,6 @@
+Podfile.lock
+Pods/
+rx_study.xcworkspace/
+rx_study.xcodeproj/project.xcworkspace
+rx_study.xcodeproj/xcuserdata
+.DS_Store
