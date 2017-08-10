@@ -35,6 +35,9 @@ class LADTableViewController: UIViewController {
             let sb = UIStoryboard(name: "LADDetailViewController", bundle: nil)
             let vc = sb.instantiateInitialViewController() as! LADDetailViewController
             vc.item = self.items.value[indexPath.row]
+            vc.valueChangeSubject.subscribe(onNext: { index in
+                self.tableView.reloadData()
+            }).addDisposableTo(self.disposeBag)
             self.navigationController?.pushViewController(vc, animated: true)
         }).addDisposableTo(disposeBag)
     }

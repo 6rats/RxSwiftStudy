@@ -7,15 +7,19 @@
 //
 
 import UIKit
+import RxSwift
 
 class LADDetailViewController: UIViewController {
     
     var item: ListItem?
+    let valueChangeSubject = PublishSubject<Int>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let index = item?.index!
         item?.index = 12345
+        valueChangeSubject.onNext(index!)
 
         // Do any additional setup after loading the view.
     }
